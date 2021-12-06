@@ -1,0 +1,15 @@
+/home/karen-ngugi/Desktop/ToDoApp/bin/Debug/net6.0/ToDoApp
+/home/karen-ngugi/Desktop/ToDoApp/bin/Debug/net6.0/ToDoApp.deps.json
+/home/karen-ngugi/Desktop/ToDoApp/bin/Debug/net6.0/ToDoApp.runtimeconfig.json
+/home/karen-ngugi/Desktop/ToDoApp/bin/Debug/net6.0/ToDoApp.dll
+/home/karen-ngugi/Desktop/ToDoApp/bin/Debug/net6.0/ref/ToDoApp.dll
+/home/karen-ngugi/Desktop/ToDoApp/bin/Debug/net6.0/ToDoApp.pdb
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.csproj.AssemblyReference.cache
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.GeneratedMSBuildEditorConfig.editorconfig
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.AssemblyInfoInputs.cache
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.AssemblyInfo.cs
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.csproj.CoreCompileInputs.cache
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.dll
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ref/ToDoApp.dll
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.pdb
+/home/karen-ngugi/Desktop/ToDoApp/obj/Debug/net6.0/ToDoApp.genruntimeconfig.cache
