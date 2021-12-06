@@ -13,20 +13,21 @@ namespace ToDoApp
 
         public static void Main()
         {
-            List<string> all_tasks = new List<string>(); // list to contain all tasks
+            List<List<string>> all_tasks = new List<List<string>>(); // list of lists to contain all tasks
             List<string> first_task = new List<string>(); // list to contain first task details
 
             Console.WriteLine("Welcome to your To-Do App! Input your first task:");
-            string? first_task_name = Console.ReadLine(); // obtain task name from user
-            if (first_task_name == null) {
-                first_task_name = "";
+            string first_task_name = Console.ReadLine(); // obtain task name from user
+            if (first_task_name == null)
+            {
+                first_task_name = " ";
             }
 
             first_task.Add(Convert.ToString(DateTime.Now)); // add current time
             first_task.Add(first_task_name); // add task name
 
             Console.WriteLine("Is the task completed? y/n: ");
-            string? first_task_completed = Console.ReadLine();
+            string first_task_completed = Console.ReadLine();
 
             // retry if user inputs anything other than 'y' or 'n'
             while (first_task_completed != "y" && first_task_completed != "n")
@@ -46,11 +47,11 @@ namespace ToDoApp
             }
 
             // add the first task to the all_tasks list
-            all_tasks.AddRange(first_task);
+            all_tasks.Add(first_task);
 
             // add more tasks
             Console.WriteLine("Task added successfully. Do you want to add another? y/n: ");
-            string? add_task = Console.ReadLine();
+            string add_task = Console.ReadLine();
 
             while (add_task != "y" && add_task != "n")
             {
@@ -63,16 +64,16 @@ namespace ToDoApp
                 List<string> new_task = new List<string>();
 
                 Console.WriteLine("Input your next task: ");
-                string? new_task_name = Console.ReadLine();
+                string new_task_name = Console.ReadLine();
                 if (new_task_name == null)
                 {
-                    new_task_name = "";
+                    new_task_name = " ";
                 }
                 new_task.Add(Convert.ToString(DateTime.Now));
                 new_task.Add(new_task_name);
 
                 Console.WriteLine("Is the task completed? y/n:");
-                string? new_task_completed = Console.ReadLine();
+                string new_task_completed = Console.ReadLine();
 
                 while (new_task_completed != "y" && new_task_completed != "n")
                 {
@@ -91,7 +92,7 @@ namespace ToDoApp
                 }
 
                 // add the new task details to the all_tasks list
-                all_tasks.AddRange(new_task);
+                all_tasks.Add(new_task);
 
                 // option to continue adding tasks
                 Console.WriteLine("Task added successfully. Do you want to add another? y/n: ");
@@ -111,24 +112,21 @@ namespace ToDoApp
             string border = "\n ----------------------------------------------------------------------------------------- ";
 
             Console.WriteLine(border);
-            Console.WriteLine(String.Format("| {0} | {1} | {2} | {3} | {4} | {5}", "S.N.", "Task", "Completed?", "Time Created", "Time Completed", border));
+            Console.WriteLine(String.Format("| {0, -4} | {1, -15} | {2, -10} | {3, -23} | {4, -23} | {5}", "S.N.", "Task", "Completed?", "Time Created", "Time Completed", border));
 
-            foreach (string task in all_tasks)
+            int i = 0;
+            foreach (List<string> task in all_tasks)
             {
-                int task_length = task.Length;
-                int i = 1;
-                Console.WriteLine(task);
-
-                if (task_length == 3)
-                {
-                    Console.WriteLine(String.Format("| {0} | {1} | {2} | {3} | {4}", i, task[0], yes_no(Convert.ToString(task[2])), task[1], border));
-                }
-                else
-                {
-                    Console.WriteLine(String.Format("| {0} | {1} | {2} | {3} | {4} | {5}", i, task[0], yes_no(Convert.ToString(task[2])), task[1], task[3], border));
-                }
-
                 i++;
+                
+                if (task.Count == 3) {
+                    Console.WriteLine(String.Format("| {0, -4} | {1, -15} | {2, -10} | {3, -23} | {4, -23} | {5}", i, task[1], yes_no(Convert.ToString(task[2])), task[0], " ", border));
+                }
+                else {
+                    Console.WriteLine(String.Format("| {0, -4} | {1, -15} | {2, -10} | {3, -23} | {4, -23} | {5}", i, task[1], yes_no(Convert.ToString(task[2])), task[0], task[3], border));
+                }
+                
+                
             }
         }
     }
